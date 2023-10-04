@@ -8,6 +8,43 @@ package unPaquete;
  *
  * @author marti
  */
-public class Cliente {
+public class Cliente{
+    //Atributos
+    private String correo;
+    private String clave;
+    private String apellido;
+    private String nombre;
+
+    public String verCorreo() {
+        return correo;
+    }
+
+    public void asignarCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String verClave() {
+        return clave;
+    }
+
+    public void asignarClave(String clave) {
+        this.clave = clave;
+    }
+
+    public String verApellido() {
+        return apellido;
+    }
+
+    public void asignarApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String verNombre() {
+        return nombre;
+    }
+
+    public void asignarNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
 }
