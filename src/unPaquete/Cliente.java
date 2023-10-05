@@ -15,6 +15,14 @@ public class Cliente{
     private String apellido;
     private String nombre;
 
+    public Cliente(String correo, String clave, String apellido, String nombre) {
+        this.correo = correo;
+        this.clave = clave;
+        this.apellido = apellido;
+        this.nombre = nombre;
+    }
+
+    
     public String verCorreo() {
         return correo;
     }
