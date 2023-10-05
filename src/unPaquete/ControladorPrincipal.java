@@ -71,9 +71,8 @@ public class ControladorPrincipal {
         
         
         Producto producto1 = new Producto("p1","Disponible",123,"p1",5.3f,"Almuerzo"); 
-        Producto producto2 = new Producto("p1","Disponible",123,"p1",1.2f,"Postre");
-        Producto producto3 = new Producto("p1","Disponible",123,"p1",1.9f,"Merienda");
-        
-        
+        Producto producto2 = new Producto("p2","Disponible",123,"p1",1.2f,"Postre");
+        Producto producto3 = new Producto("p3","Disponible",123,"p1",1.9f,"Merienda");
+       
     }      
 }
