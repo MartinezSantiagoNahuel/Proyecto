@@ -31,20 +31,49 @@ public class ControladorPrincipal {
         clientes.add(cliente3);
         
         for (Cliente unCliente : clientes) {
+            System.out.println(unCliente.verCorreo());
+            System.out.println(unCliente.verClave());
             System.out.println(unCliente.verNombre());
+            System.out.println(unCliente.verApellido());
         }
         
         
-        Empleado empleado1 = new Empleado(); 
-        Empleado empleado2 = new Empleado();
-        Empleado empleado3 = new Empleado();
+        Empleado empleado1 = new Empleado("empleado1@gmail.com", "e1", "empleado", "1"); 
+        Empleado empleado2 = new Empleado("empleado2@gmail.com", "e2", "empleado", "2");
+        Empleado empleado3 = new Empleado("empleado3@gmail.com", "e3", "empleado", "3");
+
+        empleados.add(empleado1);
+        empleados.add(empleado2);
+        empleados.add(empleado3);
         
-        Encargado encargado1 = new Encargado(); 
-        Encargado encargado2 = new Encargado();
-        Encargado encargado3 = new Encargado();
+        for (Empleado unEmpleado : empleados) {
+            System.out.println(unEmpleado.verCorreo());
+            System.out.println(unEmpleado.verClave());
+            System.out.println(unEmpleado.verNombre());
+            System.out.println(unEmpleado.verApellido());
+        }
         
-        Producto producto1 = new Producto(); 
-        Producto producto2 = new Producto();
-        Producto producto3 = new Producto();
+        
+        Encargado encargado1 = new Encargado("empleado1@gmail.com", "e1", "empleado", "1"); 
+        Encargado encargado2 = new Encargado("empleado2@gmail.com", "e2", "empleado", "2");
+        Encargado encargado3 = new Encargado("empleado3@gmail.com", "e3", "empleado", "3");
+        
+        encargados.add(encargado1);
+        encargados.add(encargado2);
+        encargados.add(encargado3);
+        
+        for (Encargado unEncargado : encargados) {
+            System.out.println(unEncargado.verCorreo());
+            System.out.println(unEncargado.verClave());
+            System.out.println(unEncargado.verNombre());
+            System.out.println(unEncargado.verApellido());
+        }
+        
+        
+        Producto producto1 = new Producto("p1","Disponible",123,"p1",5.3f,"Almuerzo"); 
+        Producto producto2 = new Producto("p1","Disponible",123,"p1",1.2f,"Postre");
+        Producto producto3 = new Producto("p1","Disponible",123,"p1",1.9f,"Merienda");
+        
+        
     }      
 }
