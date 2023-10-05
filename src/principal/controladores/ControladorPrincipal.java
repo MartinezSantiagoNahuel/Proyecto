@@ -2,9 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package unPaquete;
+package principal.controladores;
 
+import usuarios.modelos.Empleado;
+import usuarios.modelos.Encargado;
+import usuarios.modelos.Cliente;
 import java.util.ArrayList;
+import productos.modelos.Producto;
 
 
 /**
