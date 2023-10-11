@@ -24,7 +24,8 @@ public class Producto {
         this.precio = precio;
         this.categoria = categoria;
     }
-
+    
+    
     public String verNombre() {
         return nombre;
     }
