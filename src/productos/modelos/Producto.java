@@ -73,4 +73,19 @@ public class Producto {
         this.categoria = categoria;
     }
     
+    public void mostrar(){
+        System.out.println("   Producto:   ");
+        System.out.println("Estado: " + this.verEstado());
+        System.out.println("Descripcion: " + this.verDescripcion());
+        System.out.println("Codigo: " + this.verCodigo());
+        System.out.println("Categoria: " + this.verCategoria());
+        System.out.println("Precio: $" + this.verPrecio());
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" + "nombre=" + nombre + ", estado=" + estado + ", codigo=" + codigo + ", descripcion=" + descripcion + ", precio=" + precio + ", categoria=" + categoria + '}';
+    }
+        
+        
 }

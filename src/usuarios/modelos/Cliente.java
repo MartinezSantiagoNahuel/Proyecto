@@ -54,5 +54,18 @@ public class Cliente{
     public void asignarNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public void mostrar(){
+        System.out.println("   Cliente:   ");
+        System.out.println("Nombre: " + this.verNombre());
+        System.out.println("Apellido: " + this.verApellido());
+        System.out.println("Correo: " + this.verCorreo());
+        System.out.println("Clave:" + this.verClave());
+    }
+    
+    @Override
+    public String toString() {
+        return "Cliente{" + "correo=" + correo + ", clave=" + clave + ", apellido=" + apellido + ", nombre=" + nombre + '}';
+    }
     
 }
