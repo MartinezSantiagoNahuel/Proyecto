@@ -9,28 +9,18 @@ package productos.modelos;
  * @author marti
  */
 public class Producto {
-    public String nombre;
-    public String estado;
+    private String estado;
     private int codigo;
     private String descripcion;
     private float precio;
     private String categoria;
 
     public Producto(String nombre, String estado, int codigo, String descripcion, float precio, String categoria) {
-        this.nombre = nombre;
         this.estado = estado;
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precio = precio;
         this.categoria = categoria;
-    }
-
-    public String verNombre() {
-        return nombre;
-    }
-
-    public void asignarNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String verEstado() {
@@ -84,7 +74,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "nombre=" + nombre + ", estado=" + estado + ", codigo=" + codigo + ", descripcion=" + descripcion + ", precio=" + precio + ", categoria=" + categoria + '}';
+        return descripcion;
     }
         
         
