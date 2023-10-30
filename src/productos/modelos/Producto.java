@@ -16,7 +16,7 @@ public class Producto {
     private float precio;
     private String categoria;
 
-    public Producto(String nombre, String estado, int codigo, String descripcion, float precio, String categoria) {
+    public Producto(int codigo, String descripcion, String categoria, String estado, float precio) {
         this.nombre = nombre;
         this.estado = estado;
         this.codigo = codigo;
@@ -73,5 +73,20 @@ public class Producto {
     public void asignarCategoria(String categoria) {
         this.categoria = categoria;
     }
+    
+    public void mostrar(){
+        System.out.println("   Producto:   ");
+        System.out.println("Estado: " + this.verEstado());
+        System.out.println("Descripcion: " + this.verDescripcion());
+        System.out.println("Codigo: " + this.verCodigo());
+        System.out.println("Categoria: " + this.verCategoria());
+        System.out.println("Precio: $" + this.verPrecio());
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" + "estado=" + estado + ", codigo=" + codigo + ", descripcion=" + descripcion + ", precio=" + precio + ", categoria=" + categoria + '}';
+    }
+
     
 }

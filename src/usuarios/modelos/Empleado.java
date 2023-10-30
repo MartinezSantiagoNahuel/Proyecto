@@ -53,5 +53,16 @@ public class Empleado {
         this.nombre = nombre;
     }
     
-    
+    public void mostrar(){
+        System.out.println("   Empleado:   ");
+        System.out.println("Nombre: " + this.verNombre());
+        System.out.println("Apellido: " + this.verApellido());
+        System.out.println("Correo: " + this.verCorreo());
+        System.out.println("Clave:" + this.verClave());
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "correo=" + correo + ", clave=" + clave + ", apellido=" + apellido + ", nombre=" + nombre + '}';
+    }
 }
