@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package pedidos.modelos;
+package pedido.modelos;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -107,4 +107,42 @@ public class Pedido {
             System.out.print("\t");
         }   
     }
+
+    
+    
+     /**
+     * Método hashCode
+     * Establece y devuelve el código hash del objeto a partir de su código (código del producto)
+     * Código debe ser único para cada objeto del tipo Producto
+     * @return hash
+     */
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + this.numero;
+        return hash;
+    }
+    
+    /**
+     * Método equals
+     * Compara dos objetos del tipo Producto a partir de sus códigos
+     * @param obj obj
+     * @return boolean
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pedido other = (Pedido) obj;
+        return this.numero == other.numero;
+    }
+    
+    
 }

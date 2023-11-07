@@ -1,4 +1,4 @@
-package pedidos.modelos;
+package pedido.modelos;
 import productos.modelos.Producto;
 
 /*
