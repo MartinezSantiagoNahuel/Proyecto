@@ -4,66 +4,56 @@
  */
 package usuarios.modelos;
 
+import java.util.ArrayList;
+import pedido.modelos.Pedido;
+
 /**
  *
  * @author marti
  */
-public class Empleado {
-    private String correo;
-    private String clave;
-    private String apellido;
-    private String nombre;
-
+public class Empleado extends Usuario{
+    /**
+     * 
+     * Atributos heredados
+     * @param correo
+     * @param clave
+     * @param apellido
+     * @param nombre 
+     */
+    
+    //constructor
     public Empleado(String correo, String clave, String apellido, String nombre) {
-        this.correo = correo;
-        this.clave = clave;
-        this.apellido = apellido;
-        this.nombre = nombre;
+        super(correo, clave, apellido, nombre);
     }
-
-    public String verCorreo() {
-        return correo;
-    }
-
-    public void asignarCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String verClave() {
-        return clave;
-    }
-
-    public void asignarClave(String clave) {
-        this.clave = clave;
-    }
-
-    public String verApellido() {
-        return apellido;
-    }
-
-    public void asignarApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String verNombre() {
-        return nombre;
-    }
-
-    public void asignarNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    
+    /**
+     * metodos get/set heredados
+     * 
+    */
 
     public void mostrar(){
-        System.out.println("   Empleado:   ");
-        System.out.println("Nombre: " + this.verNombre());
-        System.out.println("Apellido: " + this.verApellido());
-        System.out.println("Correo: " + this.verCorreo());
-        System.out.println("Clave:" + this.verClave());
+        System.out.print("CLIENTE: ");
+        super.mostrar();
     }
-    
+
     @Override
-    public String toString() {
-        return "Empleado{" + "correo=" + correo + ", clave=" + clave + ", apellido=" + apellido + ", nombre=" + nombre + '}';
+    public boolean equals(Object obj) {
+        return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
     
+    
+     /**
+     * Método que devuelve arraylist vacio
+     * @return pedidos
+     */
+    public ArrayList<Pedido> verPedidos() {
+        ArrayList<Pedido> pedidos = new ArrayList<>();
+         
+        return pedidos;
+    }
 }

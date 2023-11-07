@@ -4,6 +4,10 @@
  */
 package usuarios.modelos;
 
+import java.util.ArrayList;
+import java.util.Objects;
+import pedido.modelos.Pedido;
+
 /**
  *
  * @author marti
@@ -53,5 +57,48 @@ public abstract class Usuario {
     public void asignarNombre(String nombre) {
         this.nombre = nombre;
     }
+ 
     
+    /**
+     * Muestra los atributos del objeto creado
+     */
+    public void mostrar(){
+        System.out.println(this.verApellido()+ " " +this.verNombre());
+        System.out.println("Correo: " + this.verCorreo());
+    }
+
+    /**
+     * Metodo hashcode
+     * 
+     * @return hash 
+     */
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.correo);
+        return hash;
+    }
+    
+    /**
+     * Metodo equals
+     * 
+     * @param obj 
+     * @return boolean
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass().getSuperclass() != obj.getClass().getSuperclass()) {
+            return false;
+        }
+        final Usuario other = (Usuario) obj;
+        return Objects.equals(this.correo, other.correo);
+    }
+    
+    public abstract ArrayList<Pedido> verPedidos();
 }

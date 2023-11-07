@@ -144,5 +144,4 @@ public class Pedido {
         return this.numero == other.numero;
     }
     
-    
 }
