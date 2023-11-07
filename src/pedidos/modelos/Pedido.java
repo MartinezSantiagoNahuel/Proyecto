@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import usuarios.modelos.Cliente;
 
 /**
@@ -19,13 +20,19 @@ public class Pedido {
     private LocalDateTime fechaYhora;
     private Cliente unCliente;
     private Estado estado;
+     private ArrayList<ProductoDelPedido> pdp = new ArrayList<>();
 
-    public Pedido(int numero, LocalDateTime fechaYhora, Cliente unCliente, Estado estado) {
+    public Pedido(int numero, LocalDateTime fechaYhora, ArrayList<ProductoDelPedido> pdp, Cliente unCliente) {
+        
         this.numero = numero;
         this.fechaYhora = fechaYhora;
         this.unCliente = unCliente;
-        this.estado = estado;
+//       this.estado = estado;
+        this.pdp = pdp;
     }
+     
+     
+
 
     public int verNumero() {
         return numero;
@@ -65,13 +72,22 @@ public class Pedido {
         this.unCliente = unCliente;
     }
 
-    public Estado verEstado() {
-        return estado;
+//    public Estado verEstado() {
+//        return estado;
+//    }
+//
+//    public void asignarEstado(Estado estado) {
+//        this.estado = estado;
+//    }
+
+    public ArrayList<ProductoDelPedido> getPdp() {
+        return pdp;
     }
 
-    public void asignarEstado(Estado estado) {
-        this.estado = estado;
+    public void setPdp(ArrayList<ProductoDelPedido> pdp) {
+        this.pdp = pdp;
     }
+    
     
     public void mostrar(){
         String patronFecha = "dd/MM/yyyy";
@@ -82,9 +98,13 @@ public class Pedido {
         System.out.print("Fecha: " + this.verFecha().format(DateTimeFormatter.ofPattern(patronFecha)));
         System.out.println("\tHora: "+this.verHora().format(DateTimeFormatter.ofPattern(patronHora)));
         System.out.println("Cliente: "+this.unCliente.verApellido()+", "+this.unCliente.verNombre());
-        System.out.println("Estado: " + this.estado.CREADO);
+        System.out.println("Estado: " + this.estado);
         System.out.println("\tPedido\t\tCantidad");
         System.out.println("\t================================");
         System.out.print("\t");
+        for(ProductoDelPedido p : pdp){
+            System.out.print((p.verUnProducto().verDescripcion())+"\t\t"+(p.verCantidad())+"\n");
+            System.out.print("\t");
+        }   
     }
 }

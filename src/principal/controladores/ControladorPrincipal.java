@@ -11,8 +11,8 @@ import usuarios.modelos.Encargado;
 import usuarios.modelos.Empleado;
 import usuarios.modelos.Cliente;
 import java.util.ArrayList;
-import pedido.modelos.Pedido;
-import pedido.modelos.ProductoDelPedido;
+import pedidos.modelos.Pedido;
+import pedidos.modelos.ProductoDelPedido;
 import productos.modelos.Categoria;
 import productos.modelos.Estado;
 
