@@ -9,13 +9,13 @@ package productos.modelos;
  * @author marti
  */
 public class Producto {
-    private String estado;
+    private Estado estado;
     private int codigo;
     private String descripcion;
     private float precio;
-    private String categoria;
+    private Categoria categoria;
 
-    public Producto(String nombre, String estado, int codigo, String descripcion, float precio, String categoria) {
+    public Producto(int codigo, String descripcion, Categoria categoria, Estado estado, float precio) {
         this.estado = estado;
         this.codigo = codigo;
         this.descripcion = descripcion;
@@ -23,11 +23,11 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public String verEstado() {
+    public Estado verEstado() {
         return estado;
     }
 
-    public void asignarEstado(String estado) {
+    public void asignarEstado(Estado estado) {
         this.estado = estado;
     }
 
@@ -55,11 +55,11 @@ public class Producto {
         this.precio = precio;
     }
 
-    public String verCategoria() {
+    public Categoria verCategoria() {
         return categoria;
     }
 
-    public void asignarCategoria(String categoria) {
+    public void asignarCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
     
