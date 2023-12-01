@@ -15,7 +15,7 @@ public class Producto {
     private float precio;
     private Categoria categoria;
 
-    public Producto(int codigo, String descripcion, Categoria categoria, Estado estado, float precio) {
+    public Producto(int codigo, String descripcion, float precio, Categoria categoria, Estado estado) {
         this.estado = estado;
         this.codigo = codigo;
         this.descripcion = descripcion;

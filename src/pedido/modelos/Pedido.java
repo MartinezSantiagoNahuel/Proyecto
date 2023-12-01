@@ -19,7 +19,7 @@ public class Pedido {
     private int numero;
     private LocalDateTime fechaYhora;
     private Cliente unCliente;
-    private Estado estado;
+     public Estado estado = Estado.CREADO;
      private ArrayList<ProductoDelPedido> pdp = new ArrayList<>();
 
     public Pedido(int numero, LocalDateTime fechaYhora, ArrayList<ProductoDelPedido> pdp, Cliente unCliente) {
@@ -80,11 +80,11 @@ public class Pedido {
 //        this.estado = estado;
 //    }
 
-    public ArrayList<ProductoDelPedido> getPdp() {
+    public ArrayList<ProductoDelPedido> verPdp() {
         return pdp;
     }
 
-    public void setPdp(ArrayList<ProductoDelPedido> pdp) {
+    public void asignarPdp(ArrayList<ProductoDelPedido> pdp) {
         this.pdp = pdp;
     }
     
@@ -98,7 +98,7 @@ public class Pedido {
         System.out.print("Fecha: " + this.verFecha().format(DateTimeFormatter.ofPattern(patronFecha)));
         System.out.println("\tHora: "+this.verHora().format(DateTimeFormatter.ofPattern(patronHora)));
         System.out.println("Cliente: "+this.unCliente.verApellido()+", "+this.unCliente.verNombre());
-        System.out.println("Estado: " + this.estado);
+        System.out.println("Estado: " +this.estado);
         System.out.println("\tPedido\t\tCantidad");
         System.out.println("\t================================");
         System.out.print("\t");
