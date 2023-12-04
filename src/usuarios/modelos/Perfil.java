@@ -6,7 +6,7 @@ package usuarios.modelos;
 
 /**
  *
- * @author marti
+ * @author estudiante
  */
 public enum Perfil {
     CLIENTE("Cliente"), EMPLEADO("Empleado"), ENCARGADO("Encargado");

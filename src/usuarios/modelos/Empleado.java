@@ -5,54 +5,62 @@
 package usuarios.modelos;
 
 import java.util.ArrayList;
+import java.util.List;
 import pedido.modelos.GestorPedidos;
 import pedido.modelos.Pedido;
 
 /**
- *
- * @author marti
+ * Atributos y comportamientos de los objetos creados como empleados
+ * @author estudiante
  */
 public class Empleado extends Usuario{
+    //Atributos heredados de la super clase Usuario (correo, clave, apellido, nombre)
+
     /**
-     * 
-     * Atributos heredados
-     * @param correo
-     * @param clave
-     * @param apellido
-     * @param nombre 
+     * Constructor
+     * Instancia objetos del tipo Empleados
+     * @param correo Correo electrónico del empleado
+     * @param clave Contraseña del empleado
+     * @param apellido Apellido del empleado
+     * @param nombre Nombre del empleado
      */
-    
-    //constructor
     public Empleado(String correo, String clave, String apellido, String nombre) {
-        super(correo, clave, apellido, nombre);
+        super(correo, apellido, nombre, clave);
     }
+    
+    //Métodos
+    //Métodos GET/SET heredados
+    //Método mostrar() heredado
     
     /**
-     * metodos get/set heredados
-     * 
-    */
-
-    public void mostrar(){
-        System.out.print("CLIENTE: ");
-        super.mostrar();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-    }
-
+     * Método hashCode
+     * Establece y devuelve el código hash del objeto a partir de su correos (correo electrónico del Empleado)
+     * Email debe ser único para cada objeto del tipo Empleado
+     * @return hash
+     */
     @Override
     public int hashCode() {
         return super.hashCode(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
     
+    /**
+     * Método equals
+     * Compara dos objetos del tipo Empleado a partir de sus correos
+     * @param obj obj
+     * @return boolean
+     */
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
     
-     /**
-     * Método que devuelve arraylist vacio
+    /**
+     * Método que devuelve todos los pedidos creados 
+     * Se utiliza el patrón Singleton
      * @return pedidos
      */
-    public ArrayList<Pedido> verPedidos() {
+    @Override
+    public List<Pedido> verPedidos() {
         GestorPedidos gp = GestorPedidos.crear();
         return gp.verPedidos();
     }

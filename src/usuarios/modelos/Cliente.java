@@ -8,59 +8,51 @@ import java.util.ArrayList;
 import pedido.modelos.Pedido;
 
 /**
- *
- * @author marti
+ * Atributos y comportamientos de los objetos creados como clientes
+ * @author estudiante
  */
 public class Cliente extends Usuario{
-    /**
-     * 
-     * Atributos heredados
-     * @param correo
-     * @param clave
-     * @param apellido
-     * @param nombre 
-     */
+    //Atributos heredados de la super clase Usuario (correo, clave, apellido, nombre)
     ArrayList<Pedido> pedidos = new ArrayList<>();
     
     /**
-     * 
      * Constructor
-     * @param correo
-     * @param clave
-     * @param apellido
-     * @param nombre 
+     * @param correo Correo electrónico del cliente
+     * @param clave Contraseña de ingreso del cliente
+     * @param apellido Apellido cliente
+     * @param nombre Nombre Cliente
      */
-    public Cliente(String correo, String clave, String apellido, String nombre) {
-        super(correo, clave, apellido, nombre);
+    public Cliente(String correo, String apellido, String nombre, String clave) {
+        super(correo, apellido, nombre, clave);
     }
 
-    /**
-     * 
-     * Metodos get/set heredados
-     */
+    //Métodos
+    //Métodos GET/SET heredados
+    //Método mostrar() heredado
     
     /**
-     * Muestra los atributos del objeto creado
+     * Método hashCode
+     * Establece y devuelve el código hash del objeto a partir de su correos (correo electrónico del cliente)
+     * Email debe ser único para cada objeto del tipo Cliente
+     * @return hash
      */
-    
-    public void mostrar(){
-        System.out.print("CLIENTE: ");
-        super.mostrar();
-    }
-   
     @Override
     public int hashCode() {
         return super.hashCode(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
     
-    
+    /**
+     * Método equals
+     * Compara dos objetos del tipo Cliente a partir de sus correos
+     * @param obj obj
+     * @return boolean
+     */
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
-
-
-     /**
+    
+    /**
      * Método abstracto implementado
      * Devuelve una lista de pedidos
      * @return pedidos
@@ -83,14 +75,15 @@ public class Cliente extends Usuario{
             this.pedidos.add(pedido);
         }
     }
-        
+    
     /**
      * Cancela el pedido del cliente. Lo elimina de la lista
      * @param pedido pedido
      */
     public void cancelarPedido(Pedido pedido){
         this.pedidos.remove(pedido);
-        if (!pedidos.contains(pedido))
+        if (!pedidos.contains(pedido)){
             pedidos.add(pedido);
+        }
     }
 }

@@ -5,21 +5,32 @@
 package productos.modelos;
 
 /**
- *
+ * Determina la condición de un producto
  * @author marti
  */
 public enum Estado {
     DISPONIBLE("Disponible"), NO_DISPONIBLE("No Disponible");
     
+    /**
+     * Guarda el valor de la enumeración elegida
+     */
     private String value;
-
-    private Estado(String value) {
-        this.value = value;
+    
+    /**
+     * Constructor
+     * @param value value
+     */
+    private Estado(String value){
+        this.value=value;
     }
-
-    @Override
+    
+    ///Métodos
+    /**
+     * Muestra la instancia en forma de String, en este caso el valor elegido
+     * @return value
+     */
+    @Override    
     public String toString() {
         return this.value ;
     }
-    
 }
